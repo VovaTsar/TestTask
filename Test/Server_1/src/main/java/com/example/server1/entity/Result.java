@@ -7,15 +7,19 @@ public class Result {
         switch (type) {
             case ("GetAll"): {
                 this.typeOfResult = TypeOfTasks.GetAll;
+                break;
             }
             case ("Create"): {
                 this.typeOfResult = TypeOfTasks.Create;
+                break;
             }
             case ("Update"): {
                 this.typeOfResult = TypeOfTasks.Update;
+                break;
             }
             case ("Remove"): {
                 this.typeOfResult = TypeOfTasks.Remove;
+                break;
             }
         }
     }
