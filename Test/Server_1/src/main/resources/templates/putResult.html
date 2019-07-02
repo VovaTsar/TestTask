@@ -1,0 +1,16 @@
+
+<html xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<body>
+<h2>List Example</h2>
+
+<c:if test="${not empty lists}">
+
+    <ul>
+        <c:forEach var="listValue" items="${products}">
+            <li>${listValue}</li>
+        </c:forEach>
+    </ul>
+
+</c:if>
+</body>
+</html>

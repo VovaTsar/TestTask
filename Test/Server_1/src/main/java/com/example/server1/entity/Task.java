@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class Task {
-    private TypeOfTasks type;
+    private String type;
     private Product product;
-
 }

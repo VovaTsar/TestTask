@@ -3,6 +3,7 @@ package com.example.server2.handler;
 import com.example.server2.entity.Product;
 import com.example.server2.entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,16 +18,24 @@ public class Questionnaire {
     private Distributor distributor;
     @Autowired
     private Sender sender;
+    private Task nextTask;
 
     public Questionnaire() {
+        nextTask = restTemplate.getForObject(URL_GET_TASK, Task.class);
     }
 
     @PostConstruct
     public void getTask() {
-        Task result = restTemplate.getForObject(URL_GET_TASK, Task.class);
-        System.out.println(result.toString());
-
-        List<Product> all = distributor.takeTask(result);
-        sender.sendResult(all);
+        if (nextTask != null) {
+            System.out.println(nextTask.toString());
+            List<Product> all = distributor.takeTask(nextTask);
+            sender.sendResult(all);
+            nextTask = restTemplate.getForObject(URL_GET_TASK, Task.class);
+        }
+        while (nextTask == null) {
+            nextTask = restTemplate.getForObject(URL_GET_TASK, Task.class);
+        }
+        getTask();
     }
+
 }
