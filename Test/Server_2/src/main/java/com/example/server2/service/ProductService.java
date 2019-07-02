@@ -1,6 +1,7 @@
 package com.example.server2.service;
 
 import com.example.server2.entity.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

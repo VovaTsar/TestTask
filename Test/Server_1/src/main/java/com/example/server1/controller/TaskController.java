@@ -1,28 +1,18 @@
 package com.example.server1.controller;
 
 
-import com.example.server1.entity.Result;
+import com.example.server1.entity.Product;
 import com.example.server1.entity.Task;
 
-import com.example.server1.entity.TypeOfTasks;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.logging.Logger;
 
 @RestController
 
 public class TaskController {
     private Queue<Task> queue = new LinkedList<>();
 
-//    @RequestMapping("/getString")
-//    public String getString()
-//    {
-//        return "Hello World";
-//    }
 
 
     @PostMapping("/api/execute")
@@ -44,7 +34,10 @@ public class TaskController {
     }
 
     @PostMapping("/api/putResult")
-    public Result putResult() {
-        return null;
+    public void putResult(@RequestBody List<Product> products) {
+        for (Product i:products) {
+            System.out.println(i);
+        }
+
     }
 }

@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void update(int id, Product product) {
-        Product found = productRepository.getOne(id);
+        Product found = productRepository.findById(id);
         found.setName(product.getName());
         productRepository.save(found);
     }

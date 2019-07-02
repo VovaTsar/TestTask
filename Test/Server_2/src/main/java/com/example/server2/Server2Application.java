@@ -1,14 +1,17 @@
 package com.example.server2;
 
-import com.example.server2.controller.Questionnaire;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class Server2Application {
-    private static final String URL_GETTASK = "http://localhost:8080/api/getTask";
+
     public static void main(String[] args) {
+        SpringApplication.run(Server2Application.class, args);
+//        Questionnaire questionnaire = new Questionnaire();
+//        questionnaire.getTask();
 
-        Questionnaire questionnaire = new Questionnaire();
 
     }
-    }
+}
 
