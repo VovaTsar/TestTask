@@ -6,7 +6,6 @@ import lombok.Data;
 public class Task {
     private TypeOfTasks type;
     private Product product;
-    private boolean status = false;
 
     @Override
     public String toString() {
