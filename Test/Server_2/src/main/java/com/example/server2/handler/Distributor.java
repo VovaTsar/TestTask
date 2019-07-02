@@ -11,9 +11,9 @@ import java.util.List;
 
 @Component
 public class Distributor {
+
     @Autowired
     private ProductServiceImpl productService;
-
 
     public Distributor() {
 

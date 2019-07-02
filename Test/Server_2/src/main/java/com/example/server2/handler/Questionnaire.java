@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 public class Questionnaire {
-    static final String URL_GETTASK = "http://localhost:8080/api/getTask";
+    static final String URL_GET_TASK = "http://localhost:8080/api/getTask";
     private RestTemplate restTemplate = new RestTemplate();
     @Autowired
     private Distributor distributor;
@@ -19,13 +19,14 @@ public class Questionnaire {
     private Sender sender;
 
     public Questionnaire() {
-   }
-@PostConstruct
-    public  void getTask() {
-        Task result = restTemplate.getForObject(URL_GETTASK, Task.class);
-         System.out.println(result.toString());
+    }
 
-         List<Product> all= distributor.takeTask(result);
-         sender.sendResult(all);
+    @PostConstruct
+    public void getTask() {
+        Task result = restTemplate.getForObject(URL_GET_TASK, Task.class);
+        System.out.println(result.toString());
+
+        List<Product> all = distributor.takeTask(result);
+        sender.sendResult(all);
     }
 }

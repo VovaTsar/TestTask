@@ -1,7 +1,6 @@
 package com.example.server1.entity;
 
 
-
 public class Task {
     private TypeOfTasks type;
     private Product product;

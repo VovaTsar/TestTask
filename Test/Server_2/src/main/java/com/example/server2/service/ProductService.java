@@ -1,16 +1,16 @@
 package com.example.server2.service;
 
 import com.example.server2.entity.Product;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
 public interface ProductService {
     List<Product> getAll();
 
-    void create( Product product);
+    void create(Product product);
 
-    void update( int id,Product product);
+    void update(int id, Product product);
 
-    void remove( int id);
+    void remove(int id);
 }

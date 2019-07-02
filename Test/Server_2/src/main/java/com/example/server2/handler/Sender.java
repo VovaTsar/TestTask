@@ -11,7 +11,7 @@ import java.util.List;
 public class Sender {
 
     private RestTemplate restTemplate = new RestTemplate();
-    static final String URL_RESULT = "http://localhost:8080/api/putResult";
+    private final String URL_RESULT = "http://localhost:8080/api/putResult";
 
 
     public Sender() {
@@ -22,7 +22,5 @@ public class Sender {
                 URL_RESULT,
                 product,
                 ResponseEntity.class);
-
-
     }
 }

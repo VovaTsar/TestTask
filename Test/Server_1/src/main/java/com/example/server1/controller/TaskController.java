@@ -14,7 +14,6 @@ public class TaskController {
     private Queue<Task> queue = new LinkedList<>();
 
 
-
     @PostMapping("/api/execute")
     public void execute(@RequestBody Task task) {
         queue.add(task);
@@ -35,7 +34,7 @@ public class TaskController {
 
     @PostMapping("/api/putResult")
     public void putResult(@RequestBody List<Product> products) {
-        for (Product i:products) {
+        for (Product i : products) {
             System.out.println(i);
         }
 

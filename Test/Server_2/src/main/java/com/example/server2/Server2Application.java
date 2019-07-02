@@ -8,10 +8,6 @@ public class Server2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Server2Application.class, args);
-//        Questionnaire questionnaire = new Questionnaire();
-//        questionnaire.getTask();
-
-
     }
 }
 
