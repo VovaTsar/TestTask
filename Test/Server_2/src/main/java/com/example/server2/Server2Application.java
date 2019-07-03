@@ -12,4 +12,3 @@ public class Server2Application {
     }
 
 }
-
