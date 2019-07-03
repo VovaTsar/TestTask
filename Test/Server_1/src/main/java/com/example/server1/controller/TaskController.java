@@ -35,6 +35,11 @@ public class TaskController {
         }
     }
 
+    @GetMapping("/api/execute")
+    public String execute() {
+        return result.toString();
+    }
+
     @GetMapping("/api/putResult")
     public String putResult1() {
         //model.addAttribute("products",products);
